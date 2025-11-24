@@ -148,10 +148,16 @@ reels.forEach(function(elem){
     sum = sum + `<div class="reel">
                
 
-                <video class="x-mejs advanced-controls lazyloaded" poster="" preload="metadata" loop="" muted='true' src="${elem.videoUrl}" autoplay="true">
-                  <source src="${elem.videoUrl}" type="video/webm">
-                  <source src="${elem.videoUrl}" type="video/mp4">
-                  </video>
+               <video 
+                class="x-mejs advanced-controls lazyloaded"
+                poster=""
+                preload="metadata"
+                loop
+                muted
+                autoplay
+                src="${elem.videoUrl}">
+              </video>
+
 
 
 
