@@ -3,6 +3,7 @@ let reel_main = document.querySelector('.reel_main')
    
 const reels = [
 {
+mute:true,
 videoUrl: "1.mp4",
 likeCount: 1200,
 isLiked: true,
@@ -14,6 +15,7 @@ userImage: "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?q=80&w=
 caption: "Exploring Bangalore streets. Loving the vibe!"
 },
 {
+mute:true,
 videoUrl: "2.mp4",
 likeCount: 980,
 isLiked: false,
@@ -25,6 +27,7 @@ userImage: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=
 caption: "New jewellery designs dropping soon!"
 },
 {
+mute:true,
 videoUrl: "3.mp4",
 likeCount: 1500,
 isLiked: true,
@@ -36,6 +39,7 @@ userImage: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=
 caption: "CS2 clutch moments 🔥🔥"
 },
 {
+mute:true,
 videoUrl: "4.mp4",
 likeCount: 760,
 isLiked: false,
@@ -47,6 +51,7 @@ userImage: "https://images.unsplash.com/photo-1562572159-4efc207f5aff?q=80&w=735
 caption: "Modern interior design ideas."
 },
 {
+mute:true,
 videoUrl: "5.mp4",
 likeCount: 2100,
 isLiked: true,
@@ -58,6 +63,7 @@ userImage: "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?q=80&w=
 caption: "Sunset that touches the heart 💛"
 },
 {
+mute:true,
 videoUrl: "6.mp4",
 likeCount: 540,
 isLiked: false,
@@ -69,6 +75,7 @@ userImage: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=
 caption: "Crispy momos kinda day 😋"
 },
 {
+mute:true,
 videoUrl: "7.mp4",
 likeCount: 3100,
 isLiked: true,
@@ -80,6 +87,7 @@ userImage: "https://images.unsplash.com/photo-1562572159-4efc207f5aff?q=80&w=735
 caption: "Never skip leg day 💪🔥"
 },
 {
+mute:true,
 videoUrl: "8.mp4",
 likeCount: 670,
 isLiked: false,
@@ -91,6 +99,7 @@ userImage: "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?q=80&w=
 caption: "Debugging = solving a mystery 🕵️‍♂️"
 },
 {
+mute:true,
 videoUrl: "9.mp4",
 likeCount: 2500,
 isLiked: true,
@@ -102,6 +111,7 @@ userImage: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=
 caption: "Every street has a story 📸"
 },
 {
+mute:true,
 videoUrl: "5.mp4",
 likeCount: 840,
 isLiked: false,
@@ -126,12 +136,18 @@ reels.forEach(function(elem , idx){
                 poster=""
                 preload="metadata"
                 loop
-                muted
+                ${elem.mute ? 'muted' : ''}
+                
                 autoplay
                 src="${elem.videoUrl}">
               </video>
 
 
+              <div class="mute" id="${idx}" >
+              ${elem.mute ? '<i class="ri-volume-mute-fill"></i>' : '<i class="ri-volume-up-fill"></i>'}
+            
+
+          </div>
 
 
                 <div class="bottom">
@@ -189,7 +205,20 @@ reels.forEach(function(elem , idx){
             reels[dats.target.id].isUnliked = true            
         }       
         allreel()
-    }    
+    }
+    
+     if(dats.target.className == 'mute'){
+        if(reels[dats.target.id].mute){
+            reels[dats.target.id].mute = false
+        }
+        else{
+            reels[dats.target.id].mute = true            
+        }       
+        allreel()
+    }
+    
+    
+
    })
 
 
