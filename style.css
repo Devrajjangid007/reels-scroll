@@ -84,7 +84,7 @@ img.user {
     font-size: 33px;
     color: #fff;
 }
-.icon_box {
+.icon_box , .like{
     text-align: center;
     margin: 0px 0 25px 0;
     cursor: pointer;
@@ -98,4 +98,7 @@ img.user {
 }
 i.love {
     color: #ff3040;
+}
+.like * {
+    pointer-events: none;
 }
