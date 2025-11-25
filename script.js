@@ -210,16 +210,23 @@ reels.forEach(function(elem , idx){
      if(dats.target.className == 'mute'){
         if(reels[dats.target.id].mute){
             reels[dats.target.id].mute = false
+
+            console.log(dats);
+            
         }
         else{
             reels[dats.target.id].mute = true            
         }       
         allreel()
-    }
-    
-    
+    }   
 
    })
+
+
+
+
+
+
 
 
    allreel()
